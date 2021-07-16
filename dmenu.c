@@ -26,6 +26,8 @@
 #define LENGTH(X)             (sizeof X / sizeof X[0])
 #define TEXTW(X)              (drw_fontset_getwidth(drw, (X)) + lrpad)
 
+#define MARGIN 6
+
 /* define opaqueness */
 #define OPAQUE 0xFFU
 
@@ -823,9 +825,9 @@ setup(void)
 				if (INTERSECT(x, y, 1, 1, info[i]))
 					break;
 
-		x = info[i].x_org;
-		y = info[i].y_org + (topbar ? 0 : info[i].height - mh);
-		mw = info[i].width;
+		x = info[i].x_org+MARGIN;
+		y = info[i].y_org + (topbar ? MARGIN : info[i].height - mh-MARGIN);
+		mw = info[i].width-MARGIN*2;
 		XFree(info);
 	} else
 #endif
