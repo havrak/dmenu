@@ -13,8 +13,8 @@ static const char *colors[SchemeLast][2] = {
 	[SchemeOut] = { "#ffffd7", "#121212" },
 };
 
-static int x_offset = 6; // applies both to left and right
-static int y_offset = 6;
+static int x_offset = 4; // applies both to left and right
+static int y_offset = 4;
 
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
